@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+/// <summary>
+/// LZW Compression Algorithm
+/// Implementation of a Java script to C#.
+/// Source: https://www.youtube.com/watch?v=1KzUikIae6k
+/// </summary>
 public class LZW
 {
     public static List<int> Encode(String text) {
