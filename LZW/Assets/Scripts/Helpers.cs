@@ -43,4 +43,32 @@ public class Helpers
         .Select(x => vector[x - 1])
         .Aggregate((x, y) => x ^ y);
     }
+
+	// Function that makes the connection between LZW and Hamming by transforming the data type.
+	// Written by ChatGPT, did a little revision myself
+	public static bool[] ConvertIntToBoolArrayOfLengthEleven(int value)
+	{
+		bool[] boolArray = new bool[11];
+
+		for (int i = 0; i < 11; i++)
+		{
+    		boolArray[i] = ((value >> i) & 1) == 1;
+		}
+
+		return boolArray;
+	}
+
+	// Function that makes the connection between LZW and Hamming by transforming the data type.
+	// Written by ChatGPT, did a little revision myself
+	public static int ConvertBoolArrayOfLengthElevenToInt(bool[] boolArray)
+	{
+		int value = 0;
+
+		for (int i = 0; i < 11; i++)
+		{
+    		value |= (boolArray[i] ? 1 : 0) << i;
+		}
+
+		return value;
+	}
 }

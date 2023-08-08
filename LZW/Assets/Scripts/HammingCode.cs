@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Hamming (15,11) Code Correction Algorithm
@@ -73,35 +68,4 @@ public class HammingCode : MonoBehaviour
         {
             encoded[pos - 1] = !encoded[pos - 1];
         }
-
-		/*
-        private void Start()
-        {
-            //length = 15;
-            int errorPosition = 10;
-            string codeString = "01010101111";
-
-            var code = Helpers.prettyStringToBoolArray(codeString);
-            var encoded = Encode(code);
-            
-            Console.WriteLine(Helpers.boolArrayToPrettyString(code));
-            Console.WriteLine(Helpers.boolArrayToPrettyString(encoded));
-
-            MixinSingleError(encoded, errorPosition);
-            Console.WriteLine(Helpers.boolArrayToPrettyString(encoded));
-
-            Console.WriteLine(ErrorSyndrome(encoded));
-            encoded[errorPosition-1] = !encoded[errorPosition-1];
-
-            var decoded = Decode(encoded);
-            Console.WriteLine(Helpers.boolArrayToPrettyString(decoded));
-
-            Console.WriteLine(Enumerable.SequenceEqual(code, decoded));
-                   
-            Console.WriteLine();
-
-            Console.ReadLine();
-        }
-		*/
-		
 }
